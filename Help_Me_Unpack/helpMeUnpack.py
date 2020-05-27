@@ -3,9 +3,10 @@
 import requests
 from base64 import b64decode
 import struct
+import config
 
 # get the encoded data
-r = requests.get('https://hackattic.com/challenges/help_me_unpack/problem?access_token=')
+r = requests.get('https://hackattic.com/challenges/help_me_unpack/problem?access_token=' + config.access_token)
 get_json = r.json()
 
 # decode the data
@@ -15,7 +16,7 @@ decode = b64decode(get_json['bytes'])
 unpacked_data = struct.unpack('iIhfdd', decode)
 
 # post the answer
-r = requests.post('https://hackattic.com/challenges/help_me_unpack/solve?access_token=',
+r = requests.post('https://hackattic.com/challenges/help_me_unpack/solve?access_token=' + config.access_token,
     json = {
         'int':unpacked_data[0],
         'uint':unpacked_data[1],
