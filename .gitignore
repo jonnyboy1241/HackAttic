@@ -1,3 +1,5 @@
 my_token.txt
 Brute_Force_ZIP/package.zip
 Brute_Force_ZIP/package/*
+config.py
+__pycache__/
