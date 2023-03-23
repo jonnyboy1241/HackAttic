@@ -27,11 +27,16 @@ def solve_password_hashing():
     # Calculate the HMAC-SHA256
     hmac_sha256 = hmac.new(salt, password, digestmod=hashlib.sha256)
 
+    # Calculate the PBKDF2-SHA256 digest
+    pbkdf2_hash = pbkdf2["hash"]
+    pbkdf2_rounds = pbkdf2["rounds"]
+    pbkdf2 = hashlib.pbkdf2_hmac(pbkdf2_hash, password, salt, pbkdf2_rounds)
+
     # Construct the solution for HackAttic
     solution = {
         "sha256": sha256_hash.hexdigest(),
         "hmac": hmac_sha256.hexdigest(),
-        "pbkdf2": "",
+        "pbkdf2": pbkdf2.hex(),
         "scrypt": ""
     }
 
