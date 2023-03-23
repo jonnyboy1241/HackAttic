@@ -1,4 +1,4 @@
-#   Challenge info is located at https://hackattic.com/challenges/help_me_unpack
+# Challenge info is located at https://hackattic.com/challenges/help_me_unpack
 from src.utils import retrieve_problem, submit_solution
 
 from base64 import b64decode
