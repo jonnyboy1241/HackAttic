@@ -1,0 +1,10 @@
+# Virtual Environment
+.venv
+
+# dotenv file
+.env
+
+# PyCharm Files
+.idea
+
+*.pyc
